@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cow Health Indicator</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .gif-container {
+            margin-top: 20px;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cow Health Indicator</h1>
+    <label for="healthStatus">Select Cow Health:</label>
+    <select id="healthStatus">
+        <option value="healthy">Healthy</option>
+        <option value="unhealthy">Unhealthy</option>
+    </select>
+    
+    <button onclick="updateGIF()">Check Health</button>
+
+    <div class="gif-container">
+        <img id="cowGif" src="healthy.png" alt="Cow Health GIF">
+    </div>
+
+    <script>
+        function updateGIF() {
+            var status = document.getElementById("healthStatus").value;
+            var cowGif = document.getElementById("cowGif");
+
+            if (status === "healthy") {
+                cowGif.src = "healthy.png"; 
+            } else {
+                cowGif.src = "unhealthy.png"; 
+            }
+        }
+    </script>
+
+</body>
+</html>
